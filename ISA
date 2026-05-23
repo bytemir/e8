@@ -36,10 +36,10 @@ ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored in ACC
    Operand 2: (Hex Value)
 
 SUB: (0x03) → Subtract Value OPR2 from value of Register Index OPR1 → Stored in ACC
-   Operand 2: (Hex Value)
+   Operand 1: (Hex Value)
 
 MUL: (0x04) → Multiply Value OPR2 with value of Register Index OPR1 → Stored in ACC
-   Operand 2: (Hex Value)
+   Operand 1: (Hex Value)
 
 DIV: (0x05) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored in ACC
    Operand 1: (Register Index) [0x1-0x6]
@@ -53,9 +53,16 @@ LOAD: (0x06) → Load Value from Register Index OPR1 into ACC
 STORE: (0x07) → Store Value from ACC into Register Index OPR1
    Operand 1: (Register Index) [0x1-0x6]
 
+RAM Instructions:
+
+RAM_WRITE: (0xa) Store Value from ACC into RAM Memory Address OPR1 from RAM Index OPR2
+   Operand 1: (Hex Value) [Memory Address]
+   Operand 2: (Hex Value) [Ram Index]
+
+RAM_READ: (0xb) Store Value from RAM Memory Index OPR1 from RAM Address OPR2 into ACC
+   Operand 1: (Hex Value) [Memory Address]
+   Operand 2: (Hex Value) [Ram Index]
+
 
 TODO:
-- 
-
-IF IS MOV AND NOT ACC ACC DISABLE
-IF IS ADD MUL DIV SUB LOAD ACC ENABLE
+-
