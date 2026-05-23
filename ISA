@@ -55,14 +55,27 @@ STORE: (0x07) → Store Value from ACC into Register Index OPR1
 
 RAM Instructions:
 
-RAM_WRITE: (0xa) Store Value from ACC into RAM Memory Address OPR1 from RAM Index OPR2
+RAM_WRITE: (0xa) → Store Value from ACC into RAM Memory Address OPR1 from RAM Index OPR2
    Operand 1: (Hex Value) [Memory Address]
    Operand 2: (Hex Value) [Ram Index]
 
-RAM_READ: (0xb) Store Value from RAM Memory Index OPR1 from RAM Address OPR2 into ACC
+RAM_READ: (0xb) → Store Value from RAM Memory Index OPR1 from RAM Address OPR2 into ACC
    Operand 1: (Hex Value) [Memory Address]
    Operand 2: (Hex Value) [Ram Index]
 
+
+RGB VIDEO Instructions:
+
+SCREEN_CLEAR: (0xc) → Reset the Display Screen
+
+SCREEN_DRAW: (0xd) → Reset the Display Screen
+Due to this being a special function the arguments are the following:
+   Value held in Register A → RED    (R)
+   Value held in Register B → GREEN  (G)
+   Value held in Register C → GREEN  (B)
+
+   Value held in Register D → X Coordinate  (X)
+   Value held in Register E → Y Coordinate  (Y)
 
 TODO:
 -
