@@ -39,10 +39,10 @@ DIV: (0x05) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Sto
    Operand 1: (Register Index) [0x1-0x6]
    Operand 2: (Hex Value)
 
-LOAD: (0x07) → Load Value from Register Index OPR1 into ACC
+LOAD: (0x06) → Load Value from Register Index OPR1 into ACC
    Operand 1: (Register Index) [0x1-0x6]
 
-STORE: (0x08) → Store Value from ACC into Register Index OPR1
+STORE: (0x07) → Store Value from ACC into Register Index OPR1
    Operand 1: (Register Index) [0x1-0x6]
 
 
