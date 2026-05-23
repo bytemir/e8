@@ -1,0 +1,46 @@
+Opcode [8 Bits] Operand1 [8 Bits] Operand2 [8 Bits] Operand3 [8 Bits]
+
+OPC → Opcode
+OPR → Operand
+
+Registers:                   (Hex Index)
+PC → Program Counter        
+A → General Purpose Register     [0x1]
+B → General Purpose Register     [0x2]
+C → General Purpose Register     [0x3]
+D → General Purpose Register     [0x4]
+E → General Purpose Register     [0x5]
+TMP → Temporary Storage Register [0x6]
+
+Instruction Set Architecture:
+
+  (Opcode)
+
+MOV: (0x00) → Move Value OPR2 into Register Index OPR1
+   Operand 1: (Register Index)
+   Operand 2: (Hex Value)
+
+JMP: (0x01) → Change PC value to OPR1
+   Operand 1: (Hex Value)
+
+Arithmetic Instructions:
+
+ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored back into Reg Index OPR1
+   Operand 1: (Register Index)
+   Operand 2: (Hex Value)
+
+SUB: (0x02) → Subtract Value OPR2 from value of Register Index OPR1 → Stored back into Reg Index OPR1
+   Operand 1: (Register Index)
+   Operand 2: (Hex Value)
+
+MUL: (0x02) → Multiply Value OPR2 with value of Register Index OPR1 → Stored back into Reg Index OPR1
+   Operand 1: (Register Index)
+   Operand 2: (Hex Value)
+
+DIV: (0x02) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored back into Reg Index OPR1
+   Operand 1: (Register Index)
+   Operand 2: (Hex Value)
+
+
+TODO:
+- 
