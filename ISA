@@ -4,20 +4,20 @@ OPC → Opcode
 OPR → Operand
 
 Registers:                   (Hex Index)
-PC → Program Counter        
+PC → Program Counter             [0x0]
 A → General Purpose Register     [0x1]
 B → General Purpose Register     [0x2]
 C → General Purpose Register     [0x3]
 D → General Purpose Register     [0x4]
 E → General Purpose Register     [0x5]
-TMP → Temporary Storage Register [0x6]
+ACC → Accumulator Register [0x6]
 
 Instruction Set Architecture:
 
   (Opcode)
 
 MOV: (0x00) → Move Value OPR2 into Register Index OPR1
-   Operand 1: (Register Index)
+   Operand 1: (Register Index) [0x1-0x6]
    Operand 2: (Hex Value)
 
 JMP: (0x01) → Change PC value to OPR1
@@ -25,21 +25,31 @@ JMP: (0x01) → Change PC value to OPR1
 
 Arithmetic Instructions:
 
-ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored back into Reg Index OPR1
-   Operand 1: (Register Index)
+ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored in ACC
+   Operand 1: (Register Index) [0x1-0x6]
    Operand 2: (Hex Value)
 
-SUB: (0x02) → Subtract Value OPR2 from value of Register Index OPR1 → Stored back into Reg Index OPR1
-   Operand 1: (Register Index)
+SUB: (0x03) → Subtract Value OPR2 from value of Register Index OPR1 → Stored in ACC
    Operand 2: (Hex Value)
 
-MUL: (0x02) → Multiply Value OPR2 with value of Register Index OPR1 → Stored back into Reg Index OPR1
-   Operand 1: (Register Index)
+MUL: (0x04) → Multiply Value OPR2 with value of Register Index OPR1 → Stored in ACC
    Operand 2: (Hex Value)
 
-DIV: (0x02) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored back into Reg Index OPR1
-   Operand 1: (Register Index)
+DIV: (0x05) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored in ACC
+   Operand 1: (Register Index) [0x1-0x6]
    Operand 2: (Hex Value)
+
+LOAD: (0x07) → Load Value from Register Index OPR1 into ACC
+   Operand 1: (Register Index) [0x1-0x6]
+
+STORE: (0x08) → Store Value from ACC into Register Index OPR1
+   Operand 1: (Register Index) [0x1-0x6]
+
+
+[Ignore: (Testing)]
+MOV 0x6 0x1 → ACC = 1
+
+
 
 
 TODO:
