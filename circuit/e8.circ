@@ -1047,25 +1047,25 @@
       <a name="scale" val="1"/>
       <a name="width" val="256"/>
     </comp>
-    <comp lib="8" loc="(1332,1220)" name="Text">
+    <comp lib="8" loc="(1330,1220)" name="Text">
       <a name="text" val="DISPLAY"/>
     </comp>
-    <comp lib="8" loc="(1438,1118)" name="Text">
+    <comp lib="8" loc="(1435,1115)" name="Text">
       <a name="text" val=".... Ram Index (256)"/>
     </comp>
-    <comp lib="8" loc="(1443,812)" name="Text">
+    <comp lib="8" loc="(1440,810)" name="Text">
       <a name="text" val="Ram Index (1)"/>
     </comp>
-    <comp lib="8" loc="(1460,447)" name="Text">
+    <comp lib="8" loc="(1460,445)" name="Text">
       <a name="text" val="RAM Index (0)"/>
     </comp>
-    <comp lib="8" loc="(1496,1559)" name="Text">
+    <comp lib="8" loc="(1495,1555)" name="Text">
       <a name="text" val="R"/>
     </comp>
-    <comp lib="8" loc="(1499,1721)" name="Text">
+    <comp lib="8" loc="(1495,1720)" name="Text">
       <a name="text" val="B"/>
     </comp>
-    <comp lib="8" loc="(1501,1638)" name="Text">
+    <comp lib="8" loc="(1500,1635)" name="Text">
       <a name="text" val="G"/>
     </comp>
     <comp loc="(310,640)" name="InstructionDecoder"/>

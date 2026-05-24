@@ -1,81 +1,83 @@
 Opcode [8 Bits] Operand1 [8 Bits] Operand2 [8 Bits] Operand3 [8 Bits]
 
+Operand3 - Not in use but is implemented for further development.
+
 OPC → Opcode
 OPR → Operand
 
 Registers:                   (Hex Index)
-PC → Program Counter             [0x0]
-A → General Purpose Register     [0x1]
-B → General Purpose Register     [0x2]
-C → General Purpose Register     [0x3]
-D → General Purpose Register     [0x4]
-E → General Purpose Register     [0x5]
-ACC → Accumulator Register      [0x6..+]
+PC → Program Counter             
+A → General Purpose Register     [0x1] 
+B → General Purpose Register     [0x2] 
+C → General Purpose Register     [0x3] 
+D → General Purpose Register     [0x4] 
+E → General Purpose Register     [0x5] 
+ACC → Accumulator Register       
 
 Instruction Set Architecture:
 
   (Opcode)
 
-MOV: (0x00) → Move Value OPR2 into Register Index OPR1
-   Operand 1: (Register Index) [0x1-0x6]
-   Operand 2: (Hex Value)
+MOV: (0x00) → Move Value OPR2 into Register Index OPR1 
+   Operand 1: (Register Index) [0x1-0x6] 
+   Operand 2: (Hex Value) 
 
-JMP: (0x01) → Change PC value to OPR1
-   Operand 1: (Hex Value)
+JMP: (0x01) → Change PC value to OPR1 
+   Operand 1: (Hex Value) 
 
-JMPG: (0x08) → Change PC to value OPR1 if ACC has a value GREATER or EQUAL to 1 stored.
-    Operand 1: (Hex Value)
+JMPG: (0x08) → Change PC to value OPR1 if ACC has a value GREATER or EQUAL to 1 stored. 
+    Operand 1: (Hex Value) 
 
-JMPZ : (0x09) → Change PC to value OPR1 if ACC has 0 stored.
-   Operand 1: (Hex Value)
+JMPZ : (0x09) → Change PC to value OPR1 if ACC has 0 stored. 
+   Operand 1: (Hex Value) 
 
 Arithmetic Instructions:
 
-ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored in ACC
-   Operand 1: (Register Index) [0x1-0x6]
-   Operand 2: (Hex Value)
+ADD: (0x02) → Add Value OPR2 to value of Register Index OPR1 → Stored in ACC 
+   Operand 1: (Register Index) [0x1-0x5] 
+   Operand 2: (Hex Value) 
 
-SUB: (0x03) → Subtract Value OPR2 from value of Register Index OPR1 → Stored in ACC
-   Operand 1: (Hex Value)
+SUB: (0x03) → Subtract Value OPR2 from value of Register Index OPR1 → Stored in ACC 
+   Operand 1: (Register Index) [0x1-0x5] 
+   Operand 2: (Hex Value) 
 
-MUL: (0x04) → Multiply Value OPR2 with value of Register Index OPR1 → Stored in ACC
-   Operand 1: (Hex Value)
+MUL: (0x04) → Multiply Value OPR2 with value of Register Index OPR1 → Stored in ACC 
+   Operand 1: (Register Index) [0x1-0x5] 
+   Operand 2: (Hex Value) 
 
-DIV: (0x05) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored in ACC
-   Operand 1: (Register Index) [0x1-0x6]
-   Operand 2: (Hex Value)
+DIV: (0x05) → Divide Value of Register Index OPR1 from value OPR2 OPR1 → Stored in ACC 
+   Operand 1: (Register Index) [0x1-0x5] 
+   Operand 2: (Hex Value) 
 
 Accumulator Movement Instructions:
 
-LOAD: (0x06) → Load Value from Register Index OPR1 into ACC
-   Operand 1: (Register Index) [0x1-0x6]
+LOAD: (0x06) → Load Value from Register Index OPR1 into ACC 
+   Operand 1: (Register Index) [0x1-0x6] 
 
-STORE: (0x07) → Store Value from ACC into Register Index OPR1
-   Operand 1: (Register Index) [0x1-0x6]
+STORE: (0x07) → Store Value from ACC into Register Index OPR1 
+   Operand 1: (Register Index) [0x1-0x6] 
 
 RAM Instructions:
 
-RAM_WRITE: (0xa) → Store Value from ACC into RAM Memory Address OPR1 from RAM Index OPR2
-   Operand 1: (Hex Value) [Memory Address]
-   Operand 2: (Hex Value) [Ram Index]
+RAM_WRITE: (0xa) → Store Value from ACC into RAM Memory Address OPR1 from RAM Index OPR2 
+   Operand 1: (Hex Value) [Memory Address] 
+   Operand 2: (Hex Value) [Ram Index] 
 
-RAM_READ: (0xb) → Store Value from RAM Memory Index OPR1 from RAM Address OPR2 into ACC
-   Operand 1: (Hex Value) [Memory Address]
-   Operand 2: (Hex Value) [Ram Index]
+RAM_READ: (0xb) → Store Value from RAM Memory Index OPR1 from RAM Address OPR2 into ACC 
+   Operand 1: (Hex Value) [Memory Address] 
+   Operand 2: (Hex Value) [Ram Index] 
 
 
 RGB VIDEO Instructions:
 
-SCREEN_CLEAR: (0xc) → Reset the Display Screen
+SCREEN_CLEAR: (0xc) → Reset the Display Screen 
 
-SCREEN_DRAW: (0xd) → Reset the Display Screen
+SCREEN_DRAW: (0xd) → Reset the Display Screen 
 Due to this being a special function the arguments are the following:
-   Value held in Register A → RED    (R)
-   Value held in Register B → GREEN  (G)
-   Value held in Register C → GREEN  (B)
+   Value held in Register A → RED    (R) 
+   Value held in Register B → GREEN  (G) 
+   Value held in Register C → BLUE  (B) 
 
-   Value held in Register D → X Coordinate  (X)
-   Value held in Register E → Y Coordinate  (Y)
+   Value held in Register D → X Coordinate  (X) 
+   Value held in Register E → Y Coordinate  (Y) 
 
-TODO:
--
