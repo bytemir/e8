@@ -1,0 +1,3 @@
+/home/emir/Desktop/emulator/build/CMakeFiles/E8Emulator.dir
+/home/emir/Desktop/emulator/build/CMakeFiles/edit_cache.dir
+/home/emir/Desktop/emulator/build/CMakeFiles/rebuild_cache.dir

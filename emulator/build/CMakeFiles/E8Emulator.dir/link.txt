@@ -1,0 +1,1 @@
+/usr/bin/cc -Wl,--dependency-file=CMakeFiles/E8Emulator.dir/link.d CMakeFiles/E8Emulator.dir/src/main.c.o -o E8Emulator  /home/emir/.local/share/vcpkg/installed/x64-linux/debug/lib/libSDL2d.a -lm -pthread
